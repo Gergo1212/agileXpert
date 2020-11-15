@@ -1,4 +1,10 @@
 package com.agile.app.dao;
 
-public class PersonDaoDB {
+import com.agile.app.entity.Person;
+
+public class PersonDaoDB implements PersonDao{
+    @Override
+    public Person addPerson(Person person) {
+        return null;
+    }
 }
