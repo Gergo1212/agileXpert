@@ -11,9 +11,9 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
-public class Parent {
+@AllArgsConstructor
+public class Person {
 
     @Id
     @GeneratedValue
@@ -21,6 +21,5 @@ public class Parent {
 
     @Column(unique = true)
     private String name;
-
 
 }
