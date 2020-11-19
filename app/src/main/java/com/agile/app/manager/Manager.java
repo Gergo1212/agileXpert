@@ -16,12 +16,11 @@ public abstract class Manager {
     final PersonDao personDao;
 
     public void run() {
-        System.out.println(ui);
         boolean running = true;
 
         while (running) {
             ui.printTitle("Menu");
-            ui.printOption('l', "List");
+            ui.printOption('l', "List Users");
             ui.printOption('q', "Quit");
 
             switch (ui.choice("lq")) {

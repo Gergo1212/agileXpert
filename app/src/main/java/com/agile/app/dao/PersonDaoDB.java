@@ -18,8 +18,6 @@ public class PersonDaoDB implements PersonDao {
 
     @Override
     public void addPerson(Person person) {
-        System.out.println("HELOOOOOOOOOO!!!!!!négy");
-        System.out.println(personRepository);
         personRepository.save(person);
     }
 
