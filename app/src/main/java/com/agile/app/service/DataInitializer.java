@@ -17,7 +17,7 @@ public class DataInitializer {
     private void init() {
         personDao.addPerson(
                 Person.builder()
-                        .name("Jolanda")
+                        .name("Joe")
                         .build()
         );
     }
