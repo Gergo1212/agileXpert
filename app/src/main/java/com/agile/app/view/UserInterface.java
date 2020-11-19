@@ -24,6 +24,18 @@ public class UserInterface {
         printStream.println("(" + option + ")" + " " + description);
     }
 
+    public void printTitle(String title) {
+        printStream.println("\n -- " + title + " --");
+    }
+
+    public char choice(String options) {
+        String line;
+        do {
+            printStream.print("Choice [" + options + "]: ");
+            line = scanner.nextLine();
+        } while (!(line.length() == 1 && options.contains(line)));
+        return line.charAt(0);
+    }
 
 }
 
