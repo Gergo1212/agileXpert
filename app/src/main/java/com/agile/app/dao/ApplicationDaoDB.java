@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class ApplicationDaoDB implements ApplicationDao{
+public class ApplicationDaoDB implements ApplicationDao {
 
-    ApplicationRepository applicationRepository;
+   private final ApplicationRepository applicationRepository;
 
 
     @Override
