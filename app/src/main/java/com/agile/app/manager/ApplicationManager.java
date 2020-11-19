@@ -1,4 +1,4 @@
-package com.agile.app.service;
+package com.agile.app.manager;
 
 public class ApplicationManager {
 }
