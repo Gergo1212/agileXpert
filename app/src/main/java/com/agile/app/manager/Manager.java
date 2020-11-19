@@ -1,17 +1,22 @@
 package com.agile.app.manager;
 
+import com.agile.app.dao.PersonDao;
 import com.agile.app.view.UserInterface;
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-
+@Data
+@Service
+@RequiredArgsConstructor
 public abstract class Manager {
 
-    UserInterface ui;
+    final UserInterface ui;
 
-    public Manager(UserInterface ui) {
-        this.ui = ui;
-    }
+    final PersonDao personDao;
 
     public void run() {
+        System.out.println(ui);
         boolean running = true;
 
         while (running) {
@@ -31,6 +36,4 @@ public abstract class Manager {
     }
 
     protected abstract void list();
-
-
 }

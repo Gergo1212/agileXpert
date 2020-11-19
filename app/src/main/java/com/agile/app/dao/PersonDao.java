@@ -2,7 +2,11 @@ package com.agile.app.dao;
 
 import com.agile.app.entity.Person;
 
+import java.util.List;
+
 public interface PersonDao {
 
-    Person addPerson(Person person);
+    void addPerson(Person person);
+
+    List<Person> getAllPeople();
 }
