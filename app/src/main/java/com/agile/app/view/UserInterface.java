@@ -1,8 +1,6 @@
 package com.agile.app.view;
 
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.io.PrintStream;
@@ -13,7 +11,7 @@ import java.util.Scanner;
 
 public class UserInterface {
 
-   private final Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     private final PrintStream printStream = new PrintStream(System.out);
 
@@ -39,5 +37,32 @@ public class UserInterface {
         return line.charAt(0);
     }
 
+    private void printPrompt(String prompt, Object defaultValue) {
+        System.out.print(prompt + " [" + defaultValue + "]: ");
+    }
+
+    public String readString(String prompt, String defaultValue) {
+        printPrompt(prompt, defaultValue);
+        String line = scanner.nextLine();
+        return line.isEmpty() ? defaultValue : line;
+    }
+
+    public int readInt(String prompt, int defaultValue) {
+        while (true) {
+            printPrompt(prompt, defaultValue);
+            String line = scanner.nextLine();
+
+            if (line.isEmpty())
+                return defaultValue;
+
+            try {
+                return Integer.parseInt(line);
+            } catch (IllegalArgumentException e) {
+                printStream.println("Enter an integer!");
+            }
+        }
+    }
 }
+
+
 

@@ -2,14 +2,12 @@ package com.agile.app.service;
 
 import com.agile.app.dao.PersonDao;
 import com.agile.app.entity.Person;
-import com.agile.app.manager.Manager;
 import com.agile.app.manager.UserManager;
 import com.agile.app.view.UserInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
 
 @Service
 @RequiredArgsConstructor
@@ -26,11 +24,11 @@ public class DataInitializer implements CommandLineRunner {
                         .name("Joe")
                         .build()
         );
-      mainMenuCreator();
+        mainMenuCreator();
     }
 
 
-    private void mainMenuCreator(){
+    private void mainMenuCreator() {
         boolean running = true;
 
         while (running) {
@@ -45,5 +43,6 @@ public class DataInitializer implements CommandLineRunner {
                     running = false;
                     break;
             }
-        }}
+        }
+    }
 }

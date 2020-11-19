@@ -21,11 +21,15 @@ public abstract class Manager {
         while (running) {
             ui.printTitle("Menu");
             ui.printOption('l', "List Users");
+            ui.printOption('a', "Add new User");
             ui.printOption('q', "Quit");
 
-            switch (ui.choice("lq")) {
+            switch (ui.choice("laq")) {
                 case 'l':
                     list();
+                    break;
+                case 'a':
+                    add();
                     break;
                 case 'q':
                     running = false;
@@ -35,4 +39,5 @@ public abstract class Manager {
     }
 
     protected abstract void list();
+    protected abstract void add();
 }
