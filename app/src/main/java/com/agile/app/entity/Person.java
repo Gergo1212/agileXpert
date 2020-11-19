@@ -27,4 +27,12 @@ public class Person {
     @Transient
     private Set<Application> applicationSet;
 
+
+    public void addApp(Application application) {
+        applicationSet.add(application);
+    }
+
+    public void removeApp(String name) {
+        applicationSet.removeIf(element -> element.getName().equals(name));
+    }
 }
