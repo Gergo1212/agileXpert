@@ -1,4 +1,8 @@
 package com.agile.app.service;
 
-public class Manager {
+public abstract class Manager {
+
+
+
+
 }
