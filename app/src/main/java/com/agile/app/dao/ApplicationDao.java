@@ -5,4 +5,5 @@ import com.agile.app.entity.Application;
 public interface ApplicationDao {
 
     void addApplication(Application application);
+    Application findAppById(Integer id);
 }

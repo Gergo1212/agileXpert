@@ -1,6 +1,8 @@
 package com.agile.app.manager;
 
+import com.agile.app.dao.ApplicationDao;
 import com.agile.app.dao.PersonDao;
+import com.agile.app.entity.Application;
 import com.agile.app.entity.Person;
 import com.agile.app.view.UserInterface;
 import org.springframework.stereotype.Service;
@@ -10,8 +12,8 @@ import org.springframework.stereotype.Service;
 public class UserManager extends Manager {
 
 
-    public UserManager(UserInterface ui, PersonDao personDao) {
-        super(ui, personDao);
+    public UserManager(UserInterface ui, PersonDao personDao, ApplicationDao applicationDao) {
+        super(ui, personDao, applicationDao);
     }
 
     @Override
@@ -28,5 +30,14 @@ public class UserManager extends Manager {
                 Person.builder()
                         .name(name)
                         .build());
+    }
+
+    @Override
+    protected void addApplicationToUser() {
+        Integer userId = ui.readInt("UserId", 0);
+        Person person = personDao.findPersonById(userId);
+        Integer applicationId = ui.readInt("ApplicationId", 0);
+        Application application = applicationDao.findAppById(applicationId);
+        person.addApp(application);
     }
 }

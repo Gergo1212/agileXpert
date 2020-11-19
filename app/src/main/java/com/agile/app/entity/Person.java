@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.transaction.Transactional;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -18,14 +18,14 @@ public class Person {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @Column(unique = true)
     private String name;
 
-    @OneToMany
     @Transient
-    private Set<Application> applicationSet;
+    @OneToMany
+    private Set<Application> applicationSet = new HashSet<>();
 
 
     public void addApp(Application application) {

@@ -66,14 +66,11 @@ public class DataInitializer implements CommandLineRunner {
         while (running) {
             ui.printTitle("Main Menu");
             ui.printOption('u', "Users");
-            ui.printOption('a', "Add new User");
             ui.printOption('q', "Quit");
             switch (ui.choice("uq")) {
                 case 'u':
                     userManager.run();
                     break;
-                case 'a':
-
                 case 'q':
                     running = false;
                     break;

@@ -16,4 +16,9 @@ public class ApplicationDaoDB implements ApplicationDao {
     public void addApplication(Application application) {
         applicationRepository.save(application);
     }
+
+    @Override
+    public Application findAppById(Integer id) {
+        return applicationRepository.findById(id).orElse(null);
+    }
 }

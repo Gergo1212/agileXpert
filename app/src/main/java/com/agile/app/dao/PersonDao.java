@@ -9,4 +9,6 @@ public interface PersonDao {
     void addPerson(Person person);
 
     List<Person> getAllPeople();
+
+    Person findPersonById(Integer id);
 }

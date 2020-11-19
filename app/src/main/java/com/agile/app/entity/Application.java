@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,7 +16,7 @@ public class Application {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @Column(unique = true)
     private String name;
