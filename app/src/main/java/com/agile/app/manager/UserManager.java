@@ -5,7 +5,6 @@ import com.agile.app.entity.Person;
 import com.agile.app.view.UserInterface;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 
 @Service
 public class UserManager extends Manager {

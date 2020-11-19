@@ -1,6 +1,8 @@
 package com.agile.app.service;
 
+import com.agile.app.dao.ApplicationDao;
 import com.agile.app.dao.PersonDao;
+import com.agile.app.entity.Application;
 import com.agile.app.entity.Person;
 import com.agile.app.manager.UserManager;
 import com.agile.app.view.UserInterface;
@@ -16,15 +18,44 @@ public class DataInitializer implements CommandLineRunner {
     private final PersonDao personDao;
     private final UserManager userManager;
     private final UserInterface ui;
+    private final ApplicationDao applicationDao;
 
     @Override
     public void run(String... args) throws Exception {
+
+        dataCreator();
+        mainMenuCreator();
+    }
+
+
+    private void dataCreator() {
+
         personDao.addPerson(
                 Person.builder()
                         .name("Joe")
                         .build()
         );
-        mainMenuCreator();
+
+        applicationDao.addApplication(
+                Application.builder()
+                        .name("GPS")
+                        .build()
+        );
+        applicationDao.addApplication(
+                Application.builder()
+                        .name("Game 1")
+                        .build());
+
+        applicationDao.addApplication(
+                Application.builder()
+                        .name("Game 2")
+                        .build());
+
+        applicationDao.addApplication(
+                Application.builder()
+                        .name("CookBook")
+                        .build());
+
     }
 
 
